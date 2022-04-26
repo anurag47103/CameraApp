@@ -33,6 +33,11 @@ public class EditActivity extends AppCompatActivity {
         String dest_uri = new StringBuilder(UUID.randomUUID().toString()).append(".jpg").toString();
 
         UCrop.Options options = new UCrop.Options();
+        options.setBrightnessEnabled(false);
+        options.setContrastEnabled(false);
+        options.setSaturationEnabled(false);
+        options.setSharpnessEnabled(false);
+
 
         UCrop.of(imageUri, Uri.fromFile(new File(getCacheDir(), dest_uri)))
                 .withOptions(options)
